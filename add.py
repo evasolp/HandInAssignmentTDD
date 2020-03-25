@@ -9,10 +9,10 @@ def Add(numbers):
         if symbol.isdigit():
             number += symbol
         else:
-            if number != '':
+            if 1 <= len(number) < 4 or number == '1000':
                 numbers_list.append(int(number))
-                number = '' 
-    if number != '':
+            number = '' 
+    if 1 <= len(number) < 4 or number == '1000':
         numbers_list.append(int(number))
     return sum(numbers_list)
 

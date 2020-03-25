@@ -15,3 +15,5 @@ def test_unknown_number_of_numbers():
 def test_new_lines_delimiter():
     assert add.Add('1\n2,3') == 6
 
+def test_ignore_numbers_over_1000():
+    assert add.Add('1001,2') == 2
