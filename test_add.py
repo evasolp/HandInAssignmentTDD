@@ -11,3 +11,7 @@ def test_two_numbers():
 
 def test_unknown_number_of_numbers():
     assert add.Add('10,2,5,22,1,1,68,43') == 152
+
+def test_new_lines_delimiter():
+    assert add.Add('1\n2,3') == 6
+
