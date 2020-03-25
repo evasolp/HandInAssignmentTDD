@@ -1,4 +1,5 @@
 import add
+import pytest
 
 def test_empty_str():
     assert add.Add('') == 0
@@ -17,3 +18,7 @@ def test_new_lines_delimiter():
 
 def test_ignore_numbers_over_1000():
     assert add.Add('1001,2') == 2
+
+def test_negative_numbers() -> None:
+    with pytest.raises(add.NegativeError):
+        assert add.Add('2,-4,3,-5')
