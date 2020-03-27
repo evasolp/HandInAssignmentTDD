@@ -22,3 +22,6 @@ def test_ignore_numbers_over_1000():
 def test_negative_numbers() -> None:
     with pytest.raises(add.NegativeError):
         assert add.Add('2,-4,3,-5')
+
+def test_different_delimiter():
+    assert add.Add('//%\n1%2%3') == 6

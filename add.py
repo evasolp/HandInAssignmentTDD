@@ -1,6 +1,6 @@
 class NegativeError(Exception):
     def __init__(self, negative_numbes):
-        print('Negatives not allowed: ' + negative_numbes[:-1])
+        print('Negatives not allowed: ' + negative_numbes)
 
 def Add(numbers):
     if numbers == '':
@@ -21,9 +21,10 @@ def Add(numbers):
                     numbers_list.append(int(number))
             number = '' 
     if 1 <= len(number) < 4 or number == '1000':
-        numbers_list.append(int(number))
+        if number[0] == '-':
+                    negative_numbers += number + ','
+        else:
+            numbers_list.append(int(number))
     if negative_numbers != '':
-        raise NegativeError(negative_numbers)
+        raise NegativeError(negative_numbers[:-1])
     return sum(numbers_list)
-
-print(Add('1\n2,3'))
